@@ -23,8 +23,8 @@ class MowerTest {
         mower.startAt(3, 4, Orientation.NORTH);
 
         // then
-        Assertions.assertThat(mower.currentPosition())
-                .isEqualTo(Position.of(3, 4));
+        Assertions.assertThat(mower.currentPosition().coordinate)
+                .isEqualTo(Coordinate.of(3, 4));
     }
 
     @ParameterizedTest
@@ -42,7 +42,7 @@ class MowerTest {
                 )
                 // then
                 .isInstanceOf(InvalidStartingPosition.class)
-                .hasMessage("Starting Position(x=" + x + ", y=" + y + ") is outside of Garden(width=5, height=7)");
+                .hasMessage("Starting Coordinate(x=" + x + ", y=" + y + ") is outside of Garden(width=5, height=7)");
     }
 
 
@@ -61,8 +61,8 @@ class MowerTest {
         mower.moveForward();
 
         // Then
-        Assertions.assertThat(mower.currentPosition())
-                .isEqualTo(Position.of(expectedX, expectedY));
+        Assertions.assertThat(mower.currentPosition().coordinate)
+                .isEqualTo(Coordinate.of(expectedX, expectedY));
 
     }
 
@@ -75,8 +75,8 @@ class MowerTest {
         mower.moveForward();
 
         // Then
-        Assertions.assertThat(mower.currentPosition())
-                .isEqualTo(Position.of(5,7));
+        Assertions.assertThat(mower.currentPosition().coordinate)
+                .isEqualTo(Coordinate.of(5,7));
     }
 
 }

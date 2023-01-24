@@ -1,7 +1,7 @@
 package com.gelhaimer.mow_it_now.domain;
 
 public class InvalidStartingPosition extends Exception {
-    public InvalidStartingPosition(Position startingPosition, Garden garden) {
-        super("Starting " + startingPosition + " is outside of " + garden);
+    public InvalidStartingPosition(Coordinate startingCoordinate, Garden garden) {
+        super("Starting " + startingCoordinate + " is outside of " + garden);
     }
 }
