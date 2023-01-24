@@ -6,7 +6,6 @@ import com.gelhaimer.mow_it_now.domain.MowerPosition;
 import com.gelhaimer.mow_it_now.domain.MowingService;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 

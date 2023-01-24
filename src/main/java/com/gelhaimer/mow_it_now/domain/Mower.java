@@ -1,8 +1,6 @@
 package com.gelhaimer.mow_it_now.domain;
 
 
-import static com.gelhaimer.mow_it_now.domain.Orientation.*;
-
 class Mower {
     private final Garden garden;
     private Coordinate currentCoordinate;
