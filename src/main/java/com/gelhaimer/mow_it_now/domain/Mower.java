@@ -14,7 +14,13 @@ public class Mower {
         return currentPosition;
     }
 
-    public void startAt(int x, int y) {
-        this.currentPosition = Position.of(x, y);
+    public void startAt(int x, int y) throws InvalidStartingPosition {
+        Position startingPosition = Position.of(x, y);
+
+        if(startingPosition.isOutsideOf(garden)){
+            throw new InvalidStartingPosition(startingPosition, garden);
+        }
+
+        this.currentPosition = startingPosition;
     }
 }
