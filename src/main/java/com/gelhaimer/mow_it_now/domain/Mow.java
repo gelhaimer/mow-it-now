@@ -40,17 +40,5 @@ public class Mow {
             return this;
         }
 
-        public MowBuilder left() {
-           return move(MowingInstruction.LEFT);
-        }
-
-        public MowBuilder forward() {
-            return move(MowingInstruction.FORWARD);
-        }
-
-        public MowBuilder right() {
-            return move(MowingInstruction.RIGHT);
-        }
-
     }
 }

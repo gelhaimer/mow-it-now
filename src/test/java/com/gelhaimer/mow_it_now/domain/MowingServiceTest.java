@@ -8,6 +8,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
+import static com.gelhaimer.mow_it_now.domain.Mow.MowingInstruction.*;
+
 class MowingServiceTest {
 
     @ParameterizedTest
@@ -30,15 +32,15 @@ class MowingServiceTest {
                         Mow.builder()
                                 .garden(5, 5)
                                 .startAt(1, 2, Orientation.NORTH)
-                                .left()
-                                .forward()
-                                .left()
-                                .forward()
-                                .left()
-                                .forward()
-                                .left()
-                                .forward()
-                                .forward()
+                                .move(LEFT)
+                                .move(FORWARD)
+                                .move(LEFT)
+                                .move(FORWARD)
+                                .move(LEFT)
+                                .move(FORWARD)
+                                .move(LEFT)
+                                .move(FORWARD)
+                                .move(FORWARD)
                                 .build(),
                         MowerPosition.of(Coordinate.of(1, 3), Orientation.NORTH)
                 ),
@@ -46,16 +48,16 @@ class MowingServiceTest {
                         Mow.builder()
                                 .garden(5, 5)
                                 .startAt(3, 3, Orientation.EAST)
-                                .forward()
-                                .forward()
-                                .right()
-                                .forward()
-                                .forward()
-                                .right()
-                                .forward()
-                                .right()
-                                .right()
-                                .forward()
+                                .move(FORWARD)
+                                .move(FORWARD)
+                                .move(RIGHT)
+                                .move(FORWARD)
+                                .move(FORWARD)
+                                .move(RIGHT)
+                                .move(FORWARD)
+                                .move(RIGHT)
+                                .move(RIGHT)
+                                .move(FORWARD)
                                 .build(),
                         MowerPosition.of(Coordinate.of(5, 1), Orientation.EAST)
                 )
