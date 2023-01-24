@@ -23,4 +23,8 @@ public class Position {
                 || x > garden.width
                 || y > garden.height;
     }
+
+    public boolean isInsideOf(Garden garden) {
+        return !isOutsideOf(garden);
+    }
 }

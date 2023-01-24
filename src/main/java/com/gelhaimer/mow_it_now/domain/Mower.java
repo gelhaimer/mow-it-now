@@ -27,12 +27,15 @@ public class Mower {
 
     public void moveForward() {
 
-        currentPosition = switch (orientation) {
+        Position nextPosition = switch (orientation) {
             case NORTH ->Position.of(currentPosition.x, currentPosition.y + 1);
             case EAST -> Position.of(currentPosition.x+1, currentPosition.y );
             case SOUTH -> Position.of(currentPosition.x, currentPosition.y - 1);
             case WEST -> Position.of(currentPosition.x-1, currentPosition.y);
         };
 
+        if(nextPosition.isInsideOf(garden)) {
+            currentPosition = nextPosition;
+        }
     }
 }

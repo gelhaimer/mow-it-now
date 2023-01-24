@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.EnumSource;
 
 
 class MowerTest {
@@ -65,6 +64,19 @@ class MowerTest {
         Assertions.assertThat(mower.currentPosition())
                 .isEqualTo(Position.of(expectedX, expectedY));
 
+    }
+
+    @Test
+    public void remain_at_its_current_position_when_trying_to_move_outside_of_garden() throws InvalidStartingPosition {
+        // Given
+        mower.startAt(5,7, Orientation.NORTH);
+
+        // When
+        mower.moveForward();
+
+        // Then
+        Assertions.assertThat(mower.currentPosition())
+                .isEqualTo(Position.of(5,7));
     }
 
 }
