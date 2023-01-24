@@ -8,7 +8,7 @@ public class Garden {
     public int width;
     public int height;
     public Garden(int width, int height) {
-        this.height = height;
         this.width = width;
+        this.height = height;
     }
 }

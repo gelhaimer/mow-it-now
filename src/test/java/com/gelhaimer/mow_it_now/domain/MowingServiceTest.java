@@ -40,7 +40,7 @@ class MowingServiceTest {
                                 .forward()
                                 .forward()
                                 .build(),
-                        new MowerPosition(Coordinate.of(1, 3), Orientation.NORTH)
+                        MowerPosition.of(Coordinate.of(1, 3), Orientation.NORTH)
                 ),
                 Arguments.of(
                         Mow.builder()
@@ -57,7 +57,7 @@ class MowingServiceTest {
                                 .right()
                                 .forward()
                                 .build(),
-                        new MowerPosition(Coordinate.of(5, 1), Orientation.EAST)
+                        MowerPosition.of(Coordinate.of(5, 1), Orientation.EAST)
                 )
         );
     }

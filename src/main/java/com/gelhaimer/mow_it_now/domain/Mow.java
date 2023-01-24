@@ -29,6 +29,11 @@ public class Mow {
             return this;
         }
 
+        public MowBuilder garden(Garden garden) {
+            this.garden = garden;
+            return this;
+        }
+
         public MowBuilder startAt(int x, int y, Orientation orientation) {
             this.startingCoordinate = Coordinate.of(x, y);
             this.orientation = orientation;

@@ -13,7 +13,7 @@ class Mower {
     }
 
     public MowerPosition currentPosition() {
-        return new MowerPosition(currentCoordinate, orientation);
+        return MowerPosition.of(currentCoordinate, orientation);
     }
 
     protected void startAt(int x, int y, Orientation orientation) throws InvalidStartingPosition {

@@ -1,22 +1,14 @@
 package com.gelhaimer.mow_it_now.domain;
 
+import lombok.RequiredArgsConstructor;
 import lombok.Value;
 
 @Value
+@RequiredArgsConstructor(staticName = "of")
 public class Coordinate {
 
     public int x;
     public int y;
-
-    private Coordinate(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-
-    public static Coordinate of(int x, int y) {
-        return new Coordinate(x, y);
-    }
 
     public boolean isOutsideOf(Garden garden) {
         return x < 0 || y < 0
